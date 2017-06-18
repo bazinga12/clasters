@@ -31,11 +31,23 @@ def update(data, service, count, predict=False):
 
 
 def main():
-    config = {
-        'ginger': {},
-        'cucumber': {},
+    example_data = {
+        'ginger': {
+            'django': 2,
+            'flask': 3,
+        },
+        'cucumber': {
+            'flask': 1,
+        },
     }
-    update(config, 'flask', 3)
-    update(config, 'django', 3)
 
-main()
+    print("Configuration before:")
+    pprint(example_data)
+
+    update(example_data, 'pylons', 7)
+
+    print("Configuration after:")
+    pprint(example_data)
+
+if __name__ == '__main__':
+    main()
