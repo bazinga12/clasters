@@ -29,7 +29,7 @@ def test_immutability():
     expected = update(data, 'pylons', 7)
     assert expected == actual
     assert expected is not actual
-    assert all(expected[claster] is not actual[claster] for claster in result)
+    assert all(expected[claster] is not actual[claster] for claster in expected)
 
 
 def test_update():
