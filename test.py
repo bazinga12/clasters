@@ -34,7 +34,7 @@ def test_immutability():
 def test_reconfiguration():
     data = {
         'ginger': {
-            'flask': 5
+            'flask': 6
         },
         'cucumber' : {
             'django': 1

@@ -31,14 +31,15 @@ def update(data, service, count):
                 rest -= 1
             services.update({service: amount_to_add})
         return {claster: services for (claster, services) in clasters}
-
     # case2:
     #  the input data should be reconfugured
-    #  eg,  { 'ginger': {'flask': 5},
+    #  eg,  { 'ginger': {'flask': 6},
     #        'cucumber': {'django: 1'} } with the new service {'aiohttp': 1}
     #  couldn'b be configured without changing current configuration
     else:
-        return reconfigure(data)
+        configured_data = reconfigure(data)
+        return update(configured_data, service, count)
+
 
 def reconfigure(data):
     config = {claster: dict() for claster in data}
@@ -56,7 +57,7 @@ def order_services(data):
 def main():
     data = {
         'ginger': {
-            'flask': 5
+            'flask': 6
         },
         'cucumber' : {
             'django': 1
