@@ -31,6 +31,18 @@ def test_immutability():
     assert expected is not actual
     assert all(expected[claster] is not actual[claster] for claster in expected)
 
+def test_reconfiguration():
+    data = {
+        'ginger': {
+            'flask': 5
+        },
+        'cucumber' : {
+            'django': 1
+        }
+    }
+
+    actual = main.update(data, 'aiohttp', 1)
+    print(actual)
 
 def test_update():
     config = {
